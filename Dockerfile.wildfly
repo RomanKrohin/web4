@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y openjdk-11-jdk
+COPY wildfly /opt/wildfly
+WORKDIR /opt/wildfly/bin
+EXPOSE 8080
+CMD ["./standalone.sh", "-b", "0.0.0.0"]

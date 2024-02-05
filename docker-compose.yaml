@@ -1,0 +1,32 @@
+services:
+  wildfly:
+    build:
+      context: .
+      dockerfile: Dockerfile.wildfly
+    ports:
+      - "8080:8080"
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=roman
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  postgres:
+    image: postgres:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: roman
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  angular:
+    build:
+      context: .
+      dockerfile: Dockerfile.angular
+    ports:
+      - "4200:4200"

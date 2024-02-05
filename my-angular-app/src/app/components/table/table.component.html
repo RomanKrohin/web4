@@ -1,0 +1,279 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" >
+
+    <label for="x">x:</label>
+    <input type="text" id="x" formControlName="x">
+  
+    <label for="y">y:</label>
+    <div>
+        <input type="radio" id="y1" formControlName="y" value="-5">
+        <label for="y1">-5</label>
+      </div>
+      <div>
+        <input type="radio" id="y2" formControlName="y" value="-4">
+        <label for="y2">-4</label>
+    </div>
+    <div>
+        <input type="radio" id="y3" formControlName="y" value="-3">
+        <label for="y3">-3</label>
+    </div>
+    <div>
+        <input type="radio" id="y4" formControlName="y" value="-2">
+        <label for="y4">-2</label>
+    </div>
+    <div>
+        <input type="radio" id="y5" formControlName="y" value="-1">
+        <label for="y5">-1</label>
+    </div>
+    <div>
+        <input type="radio" id="y6" formControlName="y" value="0">
+        <label for="y6">0</label>
+    </div>
+    <div>
+        <input type="radio" id="y7" formControlName="y" value="1">
+        <label for="y7">1</label>
+    </div>
+    <div>
+        <input type="radio" id="y8" formControlName="y" value="2">
+        <label for="y8">2</label>
+    </div>
+    <div>
+        <input type="radio" id="y9" formControlName="y" value="3">
+        <label for="y9">3</label>
+    </div>
+  
+    
+    <label for="r">R:</label>
+    <div>
+        <input type="radio" id="r1" formControlName="r" value="-5" (change)="onRChange()">
+        <label for="r1">-5</label>
+      </div>
+      <div>
+        <input type="radio" id="r2" formControlName="r" value="-4" (change)="onRChange()">
+        <label for="x2">-4</label>
+    </div>
+    <div>
+        <input type="radio" id="r3" formControlName="r" value="-3" (change)="onRChange()">
+        <label for="r3">-3</label>
+    </div>
+    <div>
+        <input type="radio" id="r4" formControlName="r" value="-2" (change)="onRChange()">
+        <label for="r4">-2</label>
+    </div>
+    <div>
+        <input type="radio" id="r5" formControlName="r" value="-1" (change)="onRChange()">
+        <label for="r5">-1</label>
+    </div>
+    <div>
+        <input type="radio" id="r6" formControlName="r" value="0" (change)="onRChange()">
+        <label for="r6">0</label>
+    </div>
+    <div>
+        <input type="radio" id="r7" formControlName="r" value="1" (change)="onRChange()">
+        <label for="r7">1</label>
+    </div>
+    <div>
+        <input type="radio" id="r8" formControlName="r" value="2" (change)="onRChange()">
+        <label for="r8">2</label>
+    </div>
+    <div>
+        <input type="radio" id="r9" formControlName="r" value="3" (change)="onRChange()">
+        <label for="r9">3</label>
+    </div>
+
+  
+    <button type="submit">Submit</button>
+
+    <button (click)="onLogout()">Logout</button>
+
+<button (click)="onClear()">Clear</button>
+<div *ngIf="errorMessage">
+    <p>{{errorMessage}}</p>
+</div>
+
+  <div id="graph">
+    <svg
+    height="400"
+    width="400"
+    xmlns="http://www.w3.org/2000/svg"
+    id="svg"
+    class="no-select"
+    (click)="handleClick($event)">
+    <line stroke="black"
+        x1="50"
+        x2="350"
+        y1="200"
+        y2="200"
+    ></line>
+    <line stroke="black"
+        x1="200"
+        x2="200"
+        y1="50"
+        y2="350"
+    ></line>
+    <line stroke="black"
+        x1="250"
+        x2="250"
+        y1="205"
+        y2="195"
+    ></line>
+    <line stroke="black"
+        x1="300"
+        x2="300"
+        y1="205"
+        y2="195"
+    />
+    <line stroke="black"
+    x1="100"
+    x2="100"
+    y1="205"
+    y2="195"
+    />
+    <line stroke="black"
+        x1="150"
+        x2="150"
+        y1="205"
+        y2="195"
+    />
+
+    <line stroke="black"
+        x1="195"
+        x2="205"
+        y1="150"
+        y2="150"
+    />
+    <line stroke="black"
+        x1="195"
+        x2="205"
+        y1="100"
+        y2="100"
+    />
+
+    <line stroke="black"
+        x1="195"
+        x2="205"
+        y1="250"
+        y2="250"
+    />
+    <line stroke="black"
+        x1="195"
+        x2="205"
+        y1="300"
+        y2="300"
+    />
+
+
+    <text fill="black"
+        x="245"
+        y="190"
+        attr.data-dynamic-rx
+    >
+    {{rValue}}
+    </text>
+    <text fill="black"
+        x="298"
+        y="190"
+        attr.data-dynamic-rxx
+    >
+    {{r2Value}}
+    </text>
+
+    <text fill="black"
+        x="90"
+        y="190"
+        attr.data-dynamic-r-xx
+    >
+    {{negr2Value}}
+    </text>
+    <text fill="black"
+        x="140"
+        y="190"
+        attr.data-dynamic-r-x
+    >
+    {{negrValue}}
+    </text>
+
+    <text fill="black"
+        x="210"
+        y="155"
+        attr.data-dynamic-r-y
+    >
+    {{rValue}}
+    </text>
+    <text fill="black"
+        x="210"
+        y="105"
+        attr.data-dynamic-r-yy
+    >
+    {{r2Value}}
+    </text>
+
+    <text fill="black"
+        x="210"
+        y="255"
+        attr.data-dynamic-ry
+    >
+    {{negrValue}}
+    </text>
+    <text fill="black"
+        x="210"
+        y="305"
+        attr.data-dynamic-ryy
+    >
+    {{negr2Value}}
+    </text>
+    <polygon points="360,200 350,195 350,205" fill="black" />
+    <polygon points="200,40 195,50 205,50" fill="black" />
+    <text fill="black"
+        x="210"
+        y="60"
+    >Y
+    </text>
+    <text fill="black"
+        x="340"
+        y="190"
+    >X
+    </text>
+    <path d="M 200 300 A 100 100, 0, 0, 1, 100 200 L 200 200 Z"
+        fill="blue"
+        fill-opacity="0.1"
+        stroke="blue"
+    ></path>
+    <path d="M200 200 L200 300 L300 300 L300 200 Z"
+        fill="blue"
+        fill-opacity="0.1"
+        stroke="blue"
+    ></path>
+    <path d="M200 200 L200 100 L300 200 Z"
+        fill="blue"
+        fill-opacity="0.1"
+        stroke="blue"
+    ></path>
+    </svg>
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Value</th>
+        <th>Execute time</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of results">
+        <td>{{ item.id }}</td>
+        <td>{{ item.x }}</td>
+        <td>{{ item.y }}</td>
+        <td>{{ item.r }}</td>
+        <td>{{ item.value }}</td>
+        <td>{{ item.execTime }}</td>
+        <td>{{ item.time }}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+

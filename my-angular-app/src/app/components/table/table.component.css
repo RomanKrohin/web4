@@ -1,0 +1,56 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+  button {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background: #333;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px; 
+    width: 100%; 
+    height: 180vh;
+    background: linear-gradient(to bottom, #ddd, #fff);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; 
+    margin-top: 1px;
+  }
+  
+
+  label, input, button {
+    margin: 5px;
+  }
+
+  div[ngIf="errorMessage"] {
+    display: none;
+  }
+
+  svg {
+    border: 1px solid black;
+  }
+
+  @media only screen and(min-width: 1195px){
+
+  }
+
+  
+  @media only screen and(min-width: 1195px){
+
+  }
+  
+  @media only screen and(min-width: 1195px){
+
+  }
+  

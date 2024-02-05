@@ -1,0 +1,14 @@
+<form [formGroup]="authForm" (ngSubmit)="onAuth()">
+    <label for="login">login:</label>
+    <input type="text" id="login" formControlName="login">
+  
+    <label for="password">password:</label>
+    <input type="text" id="password" formControlName="password">
+  
+    <button type="auth">Sign in</button>
+    <button (click)="mvReg()">Sign up</button>
+
+    <div *ngIf="errorMessage">
+        <p>{{errorMessage}}</p>
+    </div>
+</form>
