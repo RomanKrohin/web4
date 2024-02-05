@@ -1,0 +1,12 @@
+beans/AuthBean.class
+filter/RegFilter.class
+rest/ApiResource.class
+utils/DatabaseHandler.class
+filter/AuthFillter.class
+beans/ResultsBean.class
+filter/CorsFilter.class
+rest/RegResource.class
+utils/Result.class
+utils/User.class
+beans/TokensBean.class
+rest/ApiAuthResource.class
